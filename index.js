@@ -14,6 +14,15 @@ const yesBtn = document.getElementById('btn__yes');
 
 let selectedColor, active;
 
+//Time and Date Display//
+function displayTime(){
+    var today = $("#currentDay");
+
+    today.text( moment().format("dddd, MMMM Do"));
+}
+displayTime();
+
+
 //Event Listeners
 taskContainer.addEventListener('click', selectTask);
 scheduleContainer.addEventListener('click', setColors);
