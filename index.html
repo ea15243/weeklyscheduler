@@ -1,109 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+      
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weekly Scheduler</title>
+  </head>
 
-    <title>My Weekly Schedule</title>
-</head>
-<body>
-    <div class="container">
-
-        <h1>Select a task</h1>
-
-        <div class="task__container">
-            <div class="task__name" id="break" style="background-color:crimson;">Break</div>
-            <div class="task__name" id="gym" style="background-color:cornflowerblue ">Gym</div>
-            <div class="task__name" id="study" style="background-color: #d512b590">Study</div>
-            <div class="task__name" id="tv" style="background-color: #2a9d8f">Tv</div>
-            <div class="task__name" id="friends" style="background-color: #a8dadc">Friends</div>
-            <div class="task__name" id="work" style="background-color: #bdb2ff">Work</div>
-            <div class="task__name" id="deselect">Deselect All</div>
-
-        </div>
-
-        <h3>Add selected task to the schedule</h3>
-
-        <div class="schedule__container">
-            <div class="days__container">
-                <span class="corner"></span>
-                <div class="day">Sunday</div>
-                <div class="day">Monday</div>
-                <div class="day">Tuesday</div>
-                <div class="day">Wednesday</div>
-                <div class="day">Thursday</div>
-                <div class="day">Friday</div>
-                <div class="day">Saturday</div>
-            </div>
-            <div class="part__day">
-                <span class="time">8am <br> - <br> 12pm</span>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-            </div>
-            <div class="part__day">
-                <span class="time">12pm <br> - <br> 2pm</span>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-            </div>
-            <div class="part__day">
-                <span class="time">2pm <br> - <br> 6pm</span>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-            </div>
-            <div class="part__day">
-                <span class="time">6pm <br> - <br> 9pm</span>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-            </div>
-            <div class="part__day">
-                <span class="time">9pm <br> - <br> 11pm</span>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-                <div class="task"></div>
-            </div>
-        </div>
-
-        <button class="deleteBtn">Reset Schedule</button>
-
-        <div class="pop-up__container">
-            <div class="pop-up">
-                <h4>Are you sure you want to delete all the tasks from your schedule?</h4>
-                <div class="btn__container">
-                    <div class="btn__answer" id="btn__yes">YES</div>
-                    <div class="btn__answer" id="btn__no">NO</div>
-                </div>
-            </div>
-        </div>
-
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container custom-container">
+      
+      <table class="table custom-table">
+        <tbody class="timeblock">
+          <tr>
+            <th class="hour" scope="row">9:00 am</th>
+            <td id="9textarea" class="description" data-timeblockHour="9" style="text-align: start"><textarea id="9amDescription" class="custom-textarea" name="9am"></textarea></td>
+            <td class="saveBtn" style="width: clamp(3rem, 90px, 10rem);"><button id="9btn" type="button" class="btn custom-btn">&#128190</button></td>
+          </tr>
+          <tr>
+            <th class="hour" scope="row">10:00 am</th>
+            <td id="10textarea" class="description" data-timeblockHour="10" style="text-align: start;"><textarea id="10amDescription" class="custom-textarea" name="10am"></textarea></td>
+            <td class="saveBtn"><button id="10btn" type="button" class="btn custom-btn">&#128190</button></td>
+          </tr>
+          <tr>
+            <th class="hour" scope="row">11:00 am</th>
+            <td id="11textarea" class="description" data-timeblockHour="11" style="text-align: start;"><textarea id="11amDescription" class="custom-textarea" name="11am"></textarea></td>
+            <td class="saveBtn"><button id="11btn" type="button" class="btn custom-btn">&#128190</button></td>
+          </tr>
+          <tr>
+            <th class="hour" scope="row">12:00 pm</th>
+            <td id="12textarea" class="description" data-timeblockHour="12" style="text-align: start;"><textarea id="12pmDescription" class="custom-textarea" name="12pm"></textarea></td>
+            <td class="saveBtn"><button id="12btn" type="button" class="btn custom-btn">&#128190</button></td>
+          </tr>
+          <tr>
+            <th class="hour" scope="row">1:00 pm</th>
+            <td id="1textarea" class="description" data-timeblockHour="13" style="text-align: start;"><textarea id="1pmDescription" class="custom-textarea" name="1pm"></textarea></td>
+            <td class="saveBtn"><button id="1btn" type="button" class="btn custom-btn">&#128190</button></td>
+          </tr>
+          <tr>
+            <th class="hour" scope="row">2:00 pm</th>
+            <td id="2textarea" class="description" data-timeblockHour="14" style="text-align: start;"><textarea id="2pmDescription" class="custom-textarea" name="2pm"></textarea></td>
+            <td class="saveBtn"><button id="2btn" type="button" class="btn custom-btn">&#128190</button></td>
+          </tr>
+          <tr>
+            <th class="hour" scope="row">3:00 pm</th>
+            <td id="3textarea" class="description" data-timeblockHour="15" style="text-align: start;"><textarea id="3pmDescription" class="custom-textarea" name="3pm"></textarea></td>
+            <td class="saveBtn"><button id="3btn" type="button" class="btn custom-btn">&#128190</button></td>
+          </tr>
+          <tr>
+            <th class="hour" scope="row">4:00 pm</th>
+            <td id="4textarea" class="description" data-timeblockHour="16" style="text-align: start;"><textarea id="4pmDescription" class="custom-textarea" name="4pm"></textarea></td>
+            <td class="saveBtn"><button id="4btn" type="button" class="btn custom-btn">&#128190</button></td>
+          </tr>
+          <tr>
+            <th class="hour" scope="row">5:00 pm</th>
+            <td id="5textarea" class="description" data-timeblockHour="17" style="text-align: start;"><textarea id="5pmDescription" class="custom-textarea" name="5pm"></textarea></td>
+            <td class="saveBtn"><button id="5btn" type="button" class="btn custom-btn">&#128190</button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="index.js"></script>
-</body>
+    
+    <script src="./assets/js/luxon.js"></script>
+      
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
